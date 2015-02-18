@@ -10,13 +10,21 @@ class MeetupServiceProvider extends ServiceProvider {
      */
     protected $defer = true;
 
+    /**
+     * {@inheritdoc}
+     */
+    public function boot()
+    {
+        $this->registerMeetupSocialite();
+    }
+
 
     /**
      * {@inheritdoc}
      */
     public function register()
     {
-        $this->registerMeetupSocialite();
+        // empty
     }
 
     /**
