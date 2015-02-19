@@ -1,6 +1,6 @@
 {
     "name": "socialiteproviders/meetup",
-    "description": "Meetup.com implementation for Laravel/Socialite",
+    "description": "Meetup.com OAuth2 Provider for Laravel Socialite",
     "require": {
       "php": ">=5.4.0",
       "illuminate/support": "~5.0",
