@@ -1,5 +1,5 @@
 <?php
-namespace AndyWendt\Socialite\Meetup;
+namespace SocialiteProviders\Meetup;
 
 use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;

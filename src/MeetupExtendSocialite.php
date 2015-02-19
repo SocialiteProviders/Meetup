@@ -1,7 +1,7 @@
 <?php
-namespace AndyWendt\Socialite\Meetup;
+namespace SocialiteProviders\Meetup;
 
-use AndyWendt\Socialite\Extender\SocialiteWasCalled;
+use SocialiteProviders\Manager\SocialiteWasCalled;
 
 class MeetupExtendSocialite
 {

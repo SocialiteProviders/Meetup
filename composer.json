@@ -1,11 +1,11 @@
 {
-    "name": "andywendt/socialite-meetup",
+    "name": "socialiteproviders/meetup",
     "description": "Meetup.com implementation for Laravel/Socialite",
     "require": {
       "php": ">=5.4.0",
       "illuminate/support": "~5.0",
       "laravel/socialite": "~2.0",
-      "andywendt/socialite-extender": "0.1.*"
+      "socialiteproviders/manager": "0.1.*"
     },
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
     "minimum-stability": "dev",
     "autoload": {
       "psr-4": {
-        "AndyWendt\\Socialite\\Meetup\\": "src/"
+        "SocialiteProviders\\Meetup\\": "src/"
       }
     }
 }
