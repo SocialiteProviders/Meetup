@@ -44,7 +44,7 @@ composer require socialiteproviders/meetup
     'client_id' => env('MEETUP_KEY'),
     'client_secret' => env('MEETUP_SECRET'),
     'redirect' => env('MEETUP_REDIRECT_URI'),
-]
+],
 ```
 
 #### Append provider values to your `.env` file
