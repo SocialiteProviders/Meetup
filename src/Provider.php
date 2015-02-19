@@ -5,7 +5,7 @@ use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User;
 
-class MeetupProvider extends AbstractProvider implements ProviderInterface {
+class Provider extends AbstractProvider implements ProviderInterface {
 
     protected $grantType = 'authorization_code';
     protected $version = '2';

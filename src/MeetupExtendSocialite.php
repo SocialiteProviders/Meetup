@@ -7,6 +7,6 @@ class MeetupExtendSocialite
 {
     public function handle(SocialiteWasCalled $socialiteWasCalled)
     {
-        $socialiteWasCalled->extendSocialite('meetup', 'AndyWendt\Socialite\Meetup\MeetupProvider');
+        $socialiteWasCalled->extendSocialite('meetup', 'SocialiteProviders\Meetup\Provider');
     }
 }
