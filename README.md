@@ -9,6 +9,8 @@
   - [2. Service Provider](#2-service-provider)
   - [3. Add the Event and Listeners](#3-add-the-event-and-listeners)
   - [4. Services Array and .env](#4-services-array-and-env)
+    - [Add to `config/services.php`.](#add-to-configservicesphp)
+    - [Append provider values to your `.env` file](#append-provider-values-to-your-env-file)
 - [Usage](#usage)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -35,7 +37,7 @@ composer require socialiteproviders/meetup
 
 ### 4. Services Array and .env
 
-* Add to `config/services.php`.  
+#### Add to `config/services.php`.  
  
 ```php
 'meetup' => [
@@ -45,7 +47,7 @@ composer require socialiteproviders/meetup
 ]
 ```
 
-* Append provider values to your `.env` file
+#### Append provider values to your `.env` file
 
 ```php
 // other values above
