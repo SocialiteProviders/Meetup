@@ -2,10 +2,10 @@
     "name": "andywendt/socialite-meetup",
     "description": "Meetup.com implementation for Laravel/Socialite",
     "require": {
-        "illuminate/support": "~5.0",
-        "laravel/socialite": "~2.0",
       "php": ">=5.4.0",
-      "andywendt/socialite-extender": "~0.1"
+      "illuminate/support": "~5.0",
+      "laravel/socialite": "~2.0",
+      "andywendt/socialite-extender": "0.1.*"
     },
     "license": "MIT",
     "authors": [
