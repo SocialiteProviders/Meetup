@@ -4,7 +4,8 @@
     "require": {
         "illuminate/support": "~5.0",
         "laravel/socialite": "~2.0",
-        "php": ">=5.4.0"
+      "php": ">=5.4.0",
+      "andywendt/socialite-extender": "~0.1"
     },
     "license": "MIT",
     "authors": [
