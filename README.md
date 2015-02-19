@@ -24,14 +24,14 @@ composer require socialiteproviders/meetup
 
 ### 2. Service Provider
 
-[See The docs on how to install the `SocialiteProviders` service provider.](https://github.com/SocialiteProviders/Manager#2-service-provider)
+* [See the docs on how to install the `SocialiteProviders` service provider.](https://github.com/SocialiteProviders/Manager#2-service-provider)
 
 
 ### 3. Add the Event and Listeners
 
-The listener that you will be adding is `'SocialiteProviders\Meetup\MeetupExtendSocialite@handle',`. 
+* The listener that you will be adding is `'SocialiteProviders\Meetup\MeetupExtendSocialite@handle',`. 
 
-[See the docs on how to install](https://github.com/SocialiteProviders/Manager#3-add-the-event-and-listeners)
+* [See the docs on how to install](https://github.com/SocialiteProviders/Manager#3-add-the-event-and-listeners)
 
 ### 4. Services Array and .env
 
@@ -54,15 +54,15 @@ MEETUP_SECRET=yoursecretfortheservice
 MEETUP_REDIRECT_URI=https://example.com/login
 ```
 
-[See the main docs for more information](https://github.com/SocialiteProviders/Manager#4-services-array-and-env)
+* [See the main docs for more information](https://github.com/SocialiteProviders/Manager#4-services-array-and-env)
 
 
 ## Usage
 
-You should now be able to use it like you would regularly use Socialite:
+* You should now be able to use it like you would regularly use Socialite:
 
 ```php
 return Socialite::with('meetup')->redirect();
 ```
 
-[See the main docs for more information](https://github.com/SocialiteProviders/Manager#usage)
+* [See the main docs for more information](https://github.com/SocialiteProviders/Manager#usage)
