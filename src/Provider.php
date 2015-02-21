@@ -7,10 +7,8 @@ use Laravel\Socialite\Two\User;
 
 class Provider extends AbstractProvider implements ProviderInterface {
 
-    protected $grantType = 'authorization_code';
     protected $version = '2';
     protected $scopes = ['ageless'];
-
 
     /**
      * {@inheritdoc}
@@ -27,7 +25,6 @@ class Provider extends AbstractProvider implements ProviderInterface {
     {
         return 'https://secure.meetup.com/oauth2/access';
     }
-
 
     /**
      * {@inheritdoc}
@@ -50,28 +47,22 @@ class Provider extends AbstractProvider implements ProviderInterface {
     /**
      * {@inheritdoc}
      */
-    protected function getTokenFields($code)
+    protected function mapUserToObject(array $user)
     {
-        // see http://www.meetup.com/meetup_api/auth/#oauth2server-access
-        return [
-            'client_id' => $this->clientId,
-            'client_secret' => $this->clientSecret,
-            'grant_type' => $this->grantType,
-            'code' => $code,
-            'redirect_uri' => $this->redirectUrl,
-        ];
+        return (new User)->setRaw($user)->map([
+            'id'       => $user['id'],
+            'nickname' => $user['name'],
+            'name'     => $user['name'],
+            'avatar'   => array_key_exists('photo', $user) ? $user['photo']['photo_link'] : null,
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function mapUserToObject(array $user)
+    protected function getTokenFields($code)
     {
-        return (new User)->setRaw($user)->map([
-            'id' => $user['id'],
-            'nickname' => $user['name'],
-            'name' => $user['name'],
-            'avatar' => array_key_exists('photo', $user) ? $user['photo']['photo_link'] : null,
-        ]);
+        // see http://www.meetup.com/meetup_api/auth/#oauth2server-access
+        return array_merge(parent::getTokenFields($code), ['grant_type' => 'authorization_code']);
     }
 }
