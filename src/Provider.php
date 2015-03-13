@@ -5,8 +5,8 @@ use Laravel\Socialite\Two\AbstractProvider;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User;
 
-class Provider extends AbstractProvider implements ProviderInterface {
-
+class Provider extends AbstractProvider implements ProviderInterface
+{
     protected $version = '2';
     protected $scopes = ['ageless'];
 
@@ -33,7 +33,7 @@ class Provider extends AbstractProvider implements ProviderInterface {
     {
         // http://www.meetup.com/meetup_api/auth/#oauth2-resources
         $response = $this->getHttpClient()->get(
-            'https://api.meetup.com/' . $this->version . '/member/self?access_token=' . $token,
+            'https://api.meetup.com/'.$this->version.'/member/self?access_token='.$token,
             [
                 'headers' => [
                     'Accept' => 'application/json',
@@ -49,7 +49,7 @@ class Provider extends AbstractProvider implements ProviderInterface {
      */
     protected function mapUserToObject(array $user)
     {
-        return (new User)->setRaw($user)->map([
+        return (new User())->setRaw($user)->map([
             'id'       => $user['id'],
             'nickname' => $user['name'],
             'name'     => $user['name'],
