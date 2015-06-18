@@ -34,15 +34,13 @@ class Provider extends AbstractProvider implements ProviderInterface
     {
         // http://www.meetup.com/meetup_api/auth/#oauth2-resources
         $response = $this->getHttpClient()->get(
-            'https://api.meetup.com/'.$this->version.'/member/self?access_token='.$token,
-            [
-                'headers' => [
-                    'Accept' => 'application/json',
-                ],
-            ]
-        );
+            'https://api.meetup.com/'.$this->version.'/member/self?access_token='.$token, [
+            'headers' => [
+                'Accept' => 'application/json',
+            ],
+        ]);
 
-        return json_decode($response->getBody(), true);
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
@@ -51,10 +49,8 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id' => $user['id'],
-            'nickname' => $user['name'],
-            'name' => $user['name'],
-            'avatar' => array_key_exists('photo', $user) ? $user['photo']['photo_link'] : null,
+            'id' => $user['id'], 'nickname' => $user['name'],
+            'name' => $user['name'], 'avatar' => array_get('photo.photo_link', $user),
         ]);
     }
 
@@ -64,6 +60,8 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function getTokenFields($code)
     {
         // see http://www.meetup.com/meetup_api/auth/#oauth2server-access
-        return array_merge(parent::getTokenFields($code), ['grant_type' => 'authorization_code']);
+        return array_merge(parent::getTokenFields($code), [
+            'grant_type' => 'authorization_code',
+        ]);
     }
 }
